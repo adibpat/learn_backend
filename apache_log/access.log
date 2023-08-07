@@ -1,4 +1,0 @@
-172.19.0.1 - - [05/Aug/2023:22:38:17 +0000] "GET / HTTP/1.1" 200 410 "-" "Mozilla/5.0 (X11; Ubuntu; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0"
-172.19.0.1 - - [05/Aug/2023:22:38:17 +0000] "GET /favicon.ico HTTP/1.1" 404 490 "http://localhost:14080/" "Mozilla/5.0 (X11; Ubuntu; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0"
-172.20.0.1 - - [05/Aug/2023:22:39:47 +0000] "GET / HTTP/1.1" 200 271 "-" "Mozilla/5.0 (X11; Ubuntu; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0"
-172.21.0.1 - - [05/Aug/2023:22:40:55 +0000] "GET / HTTP/1.1" 200 271 "-" "Mozilla/5.0 (X11; Ubuntu; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/115.0"
