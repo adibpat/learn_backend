@@ -1,0 +1,43 @@
+version: '3.1'
+services:
+    thor:
+        image: busybox
+        networks:
+            - frontend
+            - backend
+        entrypoint: /bin/sh
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        container_name: thor
+    flask_app:
+        build: .
+        container_name: rest_api
+        networks:
+            - backend
+    webserver:
+        image: httpd
+        restart: always
+        ports:
+            - 14080:80
+            - 14443:443
+        volumes:
+            - type: bind
+              source: /home/adibpat/projects/webservers/certs/server.crt
+              target: /usr/local/apache2/conf/server.crt
+            - type: bind
+              source: /home/adibpat/projects/webservers/certs/server.key
+              target: /usr/local/apache2/conf/server.key
+            - type: bind
+              source: /home/adibpat/projects/webservers/shared/httpd.conf
+              target: /usr/local/apache2/conf/httpd.conf
+            - /home/adibpat/projects/webservers/shared:/usr/local/apache2/shared
+        container_name: api_gateway
+        networks:
+            - frontend
+            - backend
+
+networks:
+    frontend:
+        driver: bridge
+    backend:
+        driver: bridge
