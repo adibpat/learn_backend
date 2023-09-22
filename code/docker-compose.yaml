@@ -30,6 +30,9 @@ services:
             - type: bind
               source: /home/adibpat/projects/webservers/shared/httpd.conf
               target: /usr/local/apache2/conf/httpd.conf
+            - type: bind
+              source: /home/adibpat/projects/webservers/shared/mod_reverse_toupper.so
+              target: /usr/local/apache2/modules/mod_reverse_toupper.so
             - /home/adibpat/projects/webservers/shared:/usr/local/apache2/shared
         container_name: api_gateway
         networks:
